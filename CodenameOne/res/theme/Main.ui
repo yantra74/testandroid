@@ -5,4 +5,6 @@
   </component>
   <component type="Button" name="Button" cloudDestinationProperty="Button" text="Button" >
   </component>
+  <component type="RadioButton" name="RadioButton" cloudDestinationProperty="RadioButton" text="RadioButton" >
+  </component>
 </component>

@@ -36,6 +36,7 @@ public abstract class StateMachineBase extends UIBuilder {
         UIBuilder.registerCustomComponent("Form", com.codename1.ui.Form.class);
         UIBuilder.registerCustomComponent("TextArea", com.codename1.ui.TextArea.class);
         UIBuilder.registerCustomComponent("Button", com.codename1.ui.Button.class);
+        UIBuilder.registerCustomComponent("RadioButton", com.codename1.ui.RadioButton.class);
         if(loadTheme) {
             if(res == null) {
                 try {
@@ -73,6 +74,7 @@ public abstract class StateMachineBase extends UIBuilder {
         UIBuilder.registerCustomComponent("Form", com.codename1.ui.Form.class);
         UIBuilder.registerCustomComponent("TextArea", com.codename1.ui.TextArea.class);
         UIBuilder.registerCustomComponent("Button", com.codename1.ui.Button.class);
+        UIBuilder.registerCustomComponent("RadioButton", com.codename1.ui.RadioButton.class);
         if(loadTheme) {
             if(res == null) {
                 try {
@@ -130,6 +132,18 @@ public abstract class StateMachineBase extends UIBuilder {
         com.codename1.ui.Button cmp = (com.codename1.ui.Button)findByName("Button", Display.getInstance().getCurrent());
         if(cmp == null && aboutToShowThisContainer != null) {
             cmp = (com.codename1.ui.Button)findByName("Button", aboutToShowThisContainer);
+        }
+        return cmp;
+    }
+
+    public com.codename1.ui.RadioButton findRadioButton(Component root) {
+        return (com.codename1.ui.RadioButton)findByName("RadioButton", root);
+    }
+
+    public com.codename1.ui.RadioButton findRadioButton() {
+        com.codename1.ui.RadioButton cmp = (com.codename1.ui.RadioButton)findByName("RadioButton", Display.getInstance().getCurrent());
+        if(cmp == null && aboutToShowThisContainer != null) {
+            cmp = (com.codename1.ui.RadioButton)findByName("RadioButton", aboutToShowThisContainer);
         }
         return cmp;
     }
@@ -268,6 +282,10 @@ public abstract class StateMachineBase extends UIBuilder {
                 onMain_ButtonAction(c, event);
                 return;
             }
+            if("RadioButton".equals(c.getName())) {
+                onMain_RadioButtonAction(c, event);
+                return;
+            }
         }
     }
 
@@ -275,6 +293,9 @@ public abstract class StateMachineBase extends UIBuilder {
       }
 
       protected void onMain_ButtonAction(Component c, ActionEvent event) {
+      }
+
+      protected void onMain_RadioButtonAction(Component c, ActionEvent event) {
       }
 
 }
