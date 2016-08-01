@@ -127,7 +127,7 @@ public class Anagrams extends JFrame {
 
         mainPanel.setBorder(new javax.swing.border.EmptyBorder(new java.awt.Insets(12, 12, 12, 12)));
         mainPanel.setMinimumSize(new java.awt.Dimension(297, 200));
-        scrambledLabel.setText("Scrambled Word:");
+        scrambledLabel.setText("Scrambled Word is:");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
